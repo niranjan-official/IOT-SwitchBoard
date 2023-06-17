@@ -1,11 +1,26 @@
 
+.hero{
+    background-image: url("images/images.jfif");
+    height: 100vh;
+    margin: 20px;
+    padding: 0;
+    border-radius: 10%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.hero-h{
+    margin-top: 10px;
+    background-color: rgba(0,0, 0,0.5);
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .switch{
    position: relative;
    display: inline-block;
    width: 110px;
    height: 60px;
    border-radius: 50px;
-   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+   box-shadow: rgba(0, 0, 0, 0.925) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .slider{
     position: absolute;
@@ -17,7 +32,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    box-shadow: inset 0 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .switch input{display:none}
 
@@ -31,7 +46,7 @@
     background-color: #fff;
     transition: .4s;
     border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    box-shadow: rgb(0, 0, 0) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 input:checked + .slider{
     background-color: gold;
@@ -40,13 +55,13 @@ input:checked + .slider{
 input:checked + .slider::before{
     transform: translate(50px);
     background-color: black;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .space{
     margin-top: 50px;
 }
 .navbar{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .nav-main{
     font-size: 40px;
@@ -57,7 +72,4 @@ input:checked + .slider::before{
     font-size: 2rem;
     margin-top: 5px;
     margin-right: 10px;
-}
-.navbar-toggler-icon{
-    color: #fff;
 }
