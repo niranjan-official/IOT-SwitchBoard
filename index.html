@@ -13,6 +13,7 @@
 </head>
 
 <body style="background-color: gold;">
+    <div id="loading-indicator"></div>
     <div class="hero">
     <header>
         <div class="hero-h">
@@ -68,14 +69,25 @@
         <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase.js"></script>
         <script src="firebase.js"></script>
         <script src="script.js"></script>
+        <script>
+            const loadingIndicator = document.getElementById('loading-indicator');
+            loadingIndicator.style.display = 'block';
+
+    function switchInitialized() {
+        loadingIndicator.style.display = 'none'
+        const content = document.querySelector('.hero');
+        content.style.display = 'block';
+      
+    }
+            initializeSwitch('switch-1',switchInitialized);
+            initializeSwitch('switch-2',switchInitialized);
+            initializeSwitch('switch-3',switchInitialized);
+            initializeSwitch('switch-4',switchInitialized);
+
+        </script>
 </body>
 <script>
     // Initialize the switches
-  initializeSwitch('switch-1');
-  initializeSwitch('switch-2');
-  initializeSwitch('switch-3');
-  initializeSwitch('switch-4');
-
 
     // let switches = {}
 

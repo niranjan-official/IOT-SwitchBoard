@@ -2,7 +2,7 @@
 let switches = {};
 const database = firebase.database();
 
-function initializeSwitch(switchId) {
+function initializeSwitch(switchId,switchInitialized) {
     const switchElement = document.getElementById(switchId);
 
     if (!switchElement) {
@@ -21,6 +21,9 @@ function initializeSwitch(switchId) {
         switches[switchId].value = snapshot.val();
         switches[switchId].element.checked = switches[switchId].value === 1;
         console.log(`${switchId} initial value:`, switches[switchId].value);
+        if(switchId=="switch-4"){
+            switchInitialized()
+        }
     }, (error) => {
         // Handle any errors
         console.error(error);
