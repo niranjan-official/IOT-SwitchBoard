@@ -16,7 +16,7 @@ function initializeSwitch(switchId) {
     };
 
     // Listen for changes in Firebase for the specific switch
-    database.ref(`/${switchId}`).once('value', (snapshot) => {
+    database.ref(`/${switchId}`).on('value', (snapshot) => {
         // Get the updated data from the snapshot
         switches[switchId].value = snapshot.val();
         switches[switchId].element.checked = switches[switchId].value === 1;
