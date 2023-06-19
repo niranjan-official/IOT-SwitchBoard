@@ -2,7 +2,7 @@
 let switches = {};
 const database = firebase.database();
 
-function initializeSwitch(switchId,switchInitialized) {
+function initializeSwitch(switchId, switchInitialized) {
     const switchElement = document.getElementById(switchId);
 
     if (!switchElement) {
@@ -21,7 +21,7 @@ function initializeSwitch(switchId,switchInitialized) {
         switches[switchId].value = snapshot.val();
         switches[switchId].element.checked = switches[switchId].value === 1;
         console.log(`${switchId} initial value:`, switches[switchId].value);
-        if(switchId=="switch-4"){
+        if (switchId == "switch-4") {
             switchInitialized()
         }
     }, (error) => {
@@ -45,23 +45,17 @@ function initializeSwitch(switchId,switchInitialized) {
             });
     });
 }
+var dynamicTextElements = document.querySelectorAll(".row p");
 
-  // Listen for changes in the switch state
-//   function updateValue(switchID){
-//       switches[switchID].element.addEventListener('change', (event) => {
-//       const switchValue = event.target.checked;
-//     console.log(document.getElementById(switchID).checked);
-//     console.log(`Switch ${switchID} changed:`, switchValue);
-//     switches[switchID].value = switchValue ? 1 : 0;
-
-//     // Update the value in Firebase for the specific switch
-//     database.ref(`/${switchID}`).set(switches[switchID].value)
-//       .then(() => {
-//         console.log(`Switch ${switchID} value updated successfully`);
-//       })
-//       .catch((error) => {
-//         console.error(`Error updating value for switch ${switchID}:`, error);
-//       });
-//   });
-// }
-
+// Load stored texts from localStorage
+dynamicTextElements.forEach(function(element) {
+  var storedText = localStorage.getItem(element.id);
+  if (storedText) {
+    element.textContent = storedText;
+  }
+  
+  element.addEventListener("input", function() {
+    var newText = element.textContent;
+    localStorage.setItem(element.id, newText);
+  });
+});
