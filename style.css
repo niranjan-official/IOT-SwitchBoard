@@ -97,6 +97,7 @@ body {
   color: #ffa600;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, #343a40 0px 3px 6px;
   padding-left: 10px;
+  background-color: #111213;
 }
 #loading-indicator {
   background: #ffa600 url(images/loader.gif) no-repeat center;
@@ -131,12 +132,14 @@ body {
 }
 .checked-logo::before {
   margin-left: 5px;
-  margin-top: 5px;
+  margin-top: 10px;
+  padding: 2px;
   content: "Save";
   color: black;
-  border: 2px solid black ;
+  font-family: sans-serif;
   font-weight: bolder;
-  background-color: #ffa600;
+  background: linear-gradient(to right, #ff4800, #ffee00);
+
 }
 
 /* .checked-logo::after {
