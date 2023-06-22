@@ -3,7 +3,7 @@ body {
 }
 .hero {
   display: none;
-  background-color: rgb(15, 14, 14);
+  background-color: rgb(12, 11, 11);
   height: 85vh;
   padding: 0;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -56,11 +56,11 @@ body {
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-input:checked + .slider {
+.switch input:checked + .slider {
   background: linear-gradient(to right, #ff4800, #ffee00);
   box-shadow: rgb(43, 46, 48) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.137) -3px -3px 6px 1px inset;
 }
-input:checked + .slider::before {
+.switch input:checked + .slider::before {
   transform: translate(50px);
   background-color: black;
   box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset,
@@ -106,3 +106,40 @@ input:checked + .slider::before {
   z-index: 100;
   position: fixed;
 }
+.edit-button input[type="checkbox"]{
+  top: 20px;
+  margin-left: 10px;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.editor img{
+  display: inline-block;
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.editor input[type="checkbox"]{
+  display: none;
+}
+.checked-logo{
+  height: 50px;
+  margin-top: 50px; 
+}
+.checked-logo::before {
+  margin-left: 5px;
+  margin-top: 5px;
+  content: "Save";
+  color: black;
+  border: 2px solid black ;
+  font-weight: bolder;
+  background-color: #ffa600;
+}
+
+/* .checked-logo::after {
+  content: "";
+} */
+

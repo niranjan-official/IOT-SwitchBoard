@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <title>Smart-Board</title>
     <link
       rel="stylesheet"
@@ -33,9 +33,17 @@
     </header>
     <section class="hero">
       <div class="container text-light">
+        <div class="editor">
+          <label class="edit-button">
+            <input type="checkbox" class="btn btn-danger text-light"" id="edit">
+            <span class="checkbox-image" id="editor-logo"
+              ><img src="images/settings-24-xxl.png" alt=""
+            /></span>
+          </label>
+        </div>
         <div class="row">
           <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
-            <p id="s-1" class="switch-font s" contenteditable="true">S-1</p>
+            <p id="s-1" class="switch-font">S-1</p>
             <label class="switch">
               <input type="checkbox" id="switch-1" />
               <span class="slider"></span>
@@ -43,7 +51,7 @@
           </div>
 
           <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
-            <p id="s-2" class="switch-font" contenteditable="true">S-2</p>
+            <p id="s-2" class="switch-font">S-2</p>
             <label class="switch">
               <input type="checkbox" id="switch-2" />
               <span class="slider"></span>
@@ -51,7 +59,7 @@
           </div>
 
           <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
-            <p id="s-3" class="switch-font" contenteditable="true">S-3</p>
+            <p id="s-3" class="switch-font">S-3</p>
             <label class="switch">
               <input type="checkbox" id="switch-3" />
               <span class="slider"></span>
@@ -59,7 +67,7 @@
           </div>
 
           <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
-            <p id="s-4" class="switch-font" contenteditable="true">S-4</p>
+            <p id="s-4" class="switch-font">S-4</p>
             <label class="switch">
               <input type="checkbox" id="switch-4" />
               <span class="slider"></span>
@@ -92,45 +100,4 @@
       initializeSwitch("switch-4", switchInitialized);
     </script>
   </body>
-  <script>
-    // Initialize the switches
-
-    // let switches = {}
-
-    // const switchElement = document.getElementById('switch-1');
-
-    // database.ref('/Switch-1').on('value', (snapshot) => {
-    //     // Get the data from the snapshot
-    //     v = snapshot.val();
-    //     switchElement.checked = v === 1;
-    //     console.log("initial", v);
-    // }, (error) => {
-    //     // Handle any errors
-    //     console.error(error);
-    // });
-
-    // function updateValue() {
-
-    //     switchElement.addEventListener('change', (event) => {
-    //         const switchValue = event.target.checked;
-    //         console.log(switchValue);
-    //         if (switchValue) {
-    //             v = 1;
-    //             console.log("<<<>>>>");
-    //         } else {
-    //             v = 0;
-    //         }
-    //         console.log("final", v);
-
-    //         database.ref('/Switch-1').set(v)
-    //             .then(() => {
-    //                 console.log('Value updated successfully');
-    //             })
-    //             .catch((error) => {
-    //                 console.error('Error updating value:', error);
-    //             });
-    //     });
-
-    // }
-  </script>
 </html>

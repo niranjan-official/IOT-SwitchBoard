@@ -49,17 +49,48 @@ function initializeSwitch(switchId, switchInitialized) {
       });
   });
 }
-var dynamicTextElements = document.querySelectorAll(".row p");
 
-// Load stored texts from localStorage
+var editElement = document.getElementById("edit");
+var access = document.getElementsByClassName('switch-font')
+var dynamicTextElements = document.querySelectorAll(".row p");
+var editorLogo = document.getElementById("editor-logo")
+
 dynamicTextElements.forEach(function (element) {
   var storedText = localStorage.getItem(element.id);
   if (storedText) {
     element.textContent = storedText;
   }
+})
 
-  element.addEventListener("input", function () {
-    var newText = element.textContent;
-    localStorage.setItem(element.id, newText);
-  });
+editElement.addEventListener("change", function () {
+  var editAccess = event.target.checked;
+  console.log(event.target.checked);
+  if (editAccess) {
+    editorLogo.innerHTML = ''
+    editorLogo.classList.add('checked-logo')
+
+    for (let i = 0; i < access.length; i++) {
+      access[i].contentEditable = true;
+      access[i].style.border = "2px solid #ffa600"
+    }
+
+    // Load stored texts from localStorage
+    dynamicTextElements.forEach(function (element) {
+
+      element.addEventListener("input", function () {
+        var newText = element.textContent;
+        localStorage.setItem(element.id, newText);
+
+      });
+    });
+  }else{
+    editorLogo.classList.remove('checked-logo')
+    editorLogo.innerHTML = '<img src="images/settings-24-xxl.png" alt="">'
+
+    for (let i = 0; i < access.length; i++) {
+      access[i].contentEditable = false;
+      access[i].style.border = ""
+
+    }
+  }
 });
