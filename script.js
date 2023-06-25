@@ -1,7 +1,7 @@
 let switches = {};
 const database = firebase.database();
 var speed = 0;
-var speedPointer = document.getElementById("pointer")
+var speedPointer = document.getElementById("pointer");
 
 function initializeSwitch(switchId, switchInitialized) {
   const switchElement = document.getElementById(switchId);
@@ -18,14 +18,13 @@ function initializeSwitch(switchId, switchInitialized) {
 
   // Listen for changes in Firebase for the specific switch
   database.ref(`/${switchId}`).on(
-
     "value",
     (snapshot) => {
       // Get the updated data from the snapshot
       switches[switchId].value = snapshot.val();
       switches[switchId].element.checked = switches[switchId].value === 1;
       console.log(`${switchId} initial value:`, switches[switchId].value);
-      if (switchId == "switch-3") {
+      if (switchId == "switch-4") {
         switchInitialized();
       }
     },
@@ -53,40 +52,40 @@ function initializeSwitch(switchId, switchInitialized) {
       });
   });
 }
-function regulateSpeed(){
-  database.ref('/value').on(
+function regulateSpeed() {
+  database.ref("/value").on(
     "value",
     (snapshot) => {
       speed = snapshot.val();
 
       switch (speed) {
         case 0:
-         speedPointer.style.transform = "translate(-50%, -50%) rotate(0deg)"
+          speedPointer.style.transform = "translate(-50%, -50%) rotate(0deg)";
           break;
-      
+
         case 1:
-          speedPointer.style.transform = "translate(-50%, -50%) rotate(45deg)"
+          speedPointer.style.transform = "translate(-50%, -50%) rotate(45deg)";
           break;
-      
+
         case 2:
-          speedPointer.style.transform = "translate(-50%, -50%) rotate(90deg)"
+          speedPointer.style.transform = "translate(-50%, -50%) rotate(90deg)";
           break;
-      
+
         case 3:
-          speedPointer.style.transform = "translate(-50%, -50%) rotate(135deg)"
+          speedPointer.style.transform = "translate(-50%, -50%) rotate(135deg)";
           break;
-      
+
         case 4:
-          speedPointer.style.transform = "translate(-50%, -50%) rotate(180deg)"
+          speedPointer.style.transform = "translate(-50%, -50%) rotate(180deg)";
           console.log("case 4 done");
           break;
-      
+
         default:
           console.log("No such case exist");
           break;
       }
 
-      console.log(">>>>",speed);
+      console.log(">>>>", speed);
     },
     (error) => {
       // Handle any errors
@@ -137,27 +136,33 @@ editElement.addEventListener("change", function () {
   }
 });
 
-function reduceSpeed(){
-  if(speed>0){
+function reduceSpeed() {
+  if (speed > 0) {
     speed--;
-    database.ref('/value').set(speed).then(() => {
-      console.log(`Speed changed to ${speed}`);
-    })
-    .catch((error) => {
-      console.error(`Error`, error);
-    });
+    database
+      .ref("/value")
+      .set(speed)
+      .then(() => {
+        console.log(`Speed changed to ${speed}`);
+      })
+      .catch((error) => {
+        console.error(`Error`, error);
+      });
   }
   console.log("reduce function called");
 }
-function increaseSpeed(){
-  if(speed<4){
+function increaseSpeed() {
+  if (speed < 4) {
     speed++;
-    database.ref('/value').set(speed).then(() => {
-      console.log(`Speed changed to ${speed}`);
-    })
-    .catch((error) => {
-      console.error(`Error`, error);
-    });
+    database
+      .ref("/value")
+      .set(speed)
+      .then(() => {
+        console.log(`Speed changed to ${speed}`);
+      })
+      .catch((error) => {
+        console.error(`Error`, error);
+      });
   }
   console.log("increase function called");
 }
