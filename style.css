@@ -1,6 +1,17 @@
 body {
   height: 100vh;
 }
+.button{
+  background-color: #1b1a1a;
+  color: #ff6600;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
 .hero {
   display: none;
   background-color: rgb(12, 11, 11);
@@ -145,4 +156,92 @@ body {
 /* .checked-logo::after {
   content: "";
 } */
+
+.reg-body{
+    align-items: center;
+}
+    .regulator {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: #1b1a1a;
+        border-radius: 50%;
+        /* border: 2px solid #000000; */
+        overflow: hidden;
+        padding: 5px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      }
+      
+      .regulator-pointer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 8px;
+        height: 70px;
+        background-color: #ff7b00;
+        border-radius: 4px;
+        z-index: 2;
+      }
+      
+      .regulator-pointer::before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 15px;
+        background-color: black;
+        border-radius: 2px;
+        /* top: -5px; */
+        left: 2px;
+        z-index: 3;
+      }
+      
+      .regulator-modes {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .regulator-mode {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center top;
+        font-size: 14px;
+        color: #ff7b00;
+        border-radius: 50%;
+        cursor: pointer;
+        font-weight: bolder;
+        font-family: sans-serif;
+      }
+      
+      .regulator-mode:nth-child(1) {
+        transform: rotate(90deg) translateY(-67px);
+      }
+      
+      .regulator-mode:nth-child(2) {
+        transform: rotate(135deg) translateY(-68px);
+      }
+      
+      .regulator-mode:nth-child(3) {
+        transform: rotate(180deg) translateY(-70px);
+      }
+      
+      .regulator-mode:nth-child(4) {
+        transform: rotate(225deg) translateY(-75px);
+      }
+      
+      .regulator-mode:nth-child(5) {
+        transform: rotate(270deg) translateY(-75px);
+      }
+      
+      .regulator-mode:hover {
+        color: #333;
+      }
 

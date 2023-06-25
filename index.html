@@ -66,13 +66,30 @@
             </label>
           </div>
 
-          <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
+          <!-- <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
             <p id="s-4" class="switch-font">S-4</p>
             <label class="switch">
               <input type="checkbox" id="switch-4" />
               <span class="slider"></span>
             </label>
+          </div> -->
+          <div class="row col-12 reg-body">
+            <div class="col-3 d-flex justify-content-center"><button class="button" onclick="reduceSpeed()">-</button></div>
+          <div class="reg-body mt-3 col-6">
+            <div class="regulator">
+              <div id="pointer" class="regulator-pointer"></div>
+              <div class="regulator-modes">
+                <div class="regulator-mode">0</div>
+                <div class="regulator-mode">1</div>
+                <div class="regulator-mode">2</div>
+                <div class="regulator-mode">3</div>
+                <div class="regulator-mode">4</div>
+              </div>
+            </div>
           </div>
+          <div class="col-3 d-flex justify-content-center"><button class="button" onclick="increaseSpeed()">+</button></div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -94,10 +111,11 @@
         const content = document.querySelector(".hero");
         content.style.display = "block";
       }
+      regulateSpeed();
       initializeSwitch("switch-1", switchInitialized);
       initializeSwitch("switch-2", switchInitialized);
       initializeSwitch("switch-3", switchInitialized);
-      initializeSwitch("switch-4", switchInitialized);
+      // initializeSwitch("switch-4", switchInitialized);
     </script>
   </body>
 </html>
