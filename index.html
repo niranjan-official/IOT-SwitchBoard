@@ -41,8 +41,8 @@
             /></span>
           </label>
         </div>
-        <div class="row">
-          <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
+        <div class="row col-lg-12">
+          <div class="mt-5 col-lg-4 col-12 d-flex justify-content-center">
             <p id="s-1" class="switch-font">S-1</p>
             <label class="switch">
               <input type="checkbox" id="switch-1" />
@@ -50,7 +50,7 @@
             </label>
           </div>
 
-          <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
+          <div class="mt-5 col-lg-4 col-12 d-flex justify-content-center">
             <p id="s-2" class="switch-font">S-2</p>
             <label class="switch">
               <input type="checkbox" id="switch-2" />
@@ -58,7 +58,7 @@
             </label>
           </div>
 
-          <div class="mt-5 col-lg-6 col-12 d-flex justify-content-center">
+          <div class="mt-5 col-lg-4 col-12 d-flex justify-content-center">
             <p id="s-3" class="switch-font">S-3</p>
             <label class="switch">
               <input type="checkbox" id="switch-3" />
@@ -68,6 +68,7 @@
 
           <div class="d-flex justify-content-center">
             <div class="row col-11 reg-body mt-3">
+
               <div class="mt-4 col-6">
                 <div class="regulator">
                   <div id="pointer" class="regulator-pointer"></div>
@@ -105,6 +106,8 @@
           </div>
         </div>
       </div>
+      <audio src="sounds/click.mp3" id="clickSound" hidden></audio>
+      <audio src="sounds/fanClick.wav" id="fanRotation" hidden></audio>
     </section>
 
     <script

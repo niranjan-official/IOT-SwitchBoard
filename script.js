@@ -2,6 +2,8 @@ let switches = {};
 const database = firebase.database();
 var speed = 0;
 var speedPointer = document.getElementById("pointer");
+var clickSound = document.getElementById("clickSound");
+var fanSound = document.getElementById("fanRotation");
 
 function initializeSwitch(switchId, switchInitialized) {
   const switchElement = document.getElementById(switchId);
@@ -36,6 +38,7 @@ function initializeSwitch(switchId, switchInitialized) {
   // Get the speed of Regulator
 
   switches[switchId].element.addEventListener("change", () => {
+    clickSound.play()
     const switchValue = switches[switchId].element.checked;
     console.log(`Switch ${switchId} changed:`, switchValue);
     switches[switchId].value = switchValue ? 1 : 0;
@@ -57,6 +60,7 @@ function regulateSpeed() {
     "value",
     (snapshot) => {
       speed = snapshot.val();
+      fanSound.play();
 
       switch (speed) {
         case 0:

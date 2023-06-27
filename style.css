@@ -248,7 +248,3 @@ body {
 .regulator-mode:nth-child(5) {
   transform: rotate(270deg) translateY(-75px);
 }
-
-.regulator-mode:hover {
-  color: #333;
-}
